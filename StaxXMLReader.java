@@ -30,11 +30,9 @@ public class StaxXMLReader extends SampleBase{
 	}
     
 	public static void main(String[] args) throws IOException {
-    		String fileName = "/home/shilpa/Downloads/misc_dept_18april2019.xml";
+    		String fileName = "/example.xml";
     		
-    				//"/home/shilpa/Downloads/misc_dept_18april2019.xml";
-    				//"";
-    		 //String xmlSample_html = "/" + xmlSample_html;
+    				
 		System.setProperty("jdk.xml.totalEntitySizeLimit", "500000000");
 
 		SAXParserFactory spf = SAXParserFactory.newInstance();
@@ -51,15 +49,14 @@ public class StaxXMLReader extends SampleBase{
     	        }
     		
          
-        		//"/home/shilpa/Desktop/Animal&husbandary_5feb2019.xml";
-      
+        		
        
     }
 
     private static void parseXML(String fileName) throws IOException {
     
         XMLInputFactory xmlInputFactory = XMLInputFactory.newInstance();
-        File dir = new File("/home/shilpa/Desktop/OUTPUT");
+        File dir = new File("/OUTPUT");
         System.out.println(dir.mkdir());
         System.out.println(dir.getPath());
         FileWriter fw1 = null ; 
@@ -79,8 +76,7 @@ public class StaxXMLReader extends SampleBase{
                     	   
                            if(text_tAttr.getValue().equals("text_t") || text_tAttr.getValue().equals("sku")) {
                         	   count++;
-                        	   if(text_t == sku ) {//smb://10.208.11.149/e/misc_dept_18april2019/ExtractURL/"; //The shared directory to store pictures
-                                   //NtlmPasswordAuthentication auth = new NtlmPasswordAuthentication("GIST","akulkarni", "gist@123");
+                        	   if(text_t == sku ) {
                         		   fw1=new FileWriter(dir.getPath()+"/tags_"+count+".txt");
                         	   }
                         	   xmlEvent = xmlEventReader.nextEvent();
